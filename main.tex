@@ -1,0 +1,65 @@
+\documentclass[10pt,oneside]{book}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{subfiles}
+\usepackage{fancyhdr}
+\usepackage{epigraph}
+\usepackage{url}
+\usepackage{makecell}
+\usepackage[titletoc]{appendix}
+\title{Professional Evaluation and Growth Plan}
+\author{Jordan C Hanson, PhD}
+\date{\today}
+\usepackage[book]{ragged2e}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jordan C Hanson, PhD}
+\lhead{Professional Evaluation and Growth Plan}
+\rfoot{\thepage}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+\begin{flushleft}
+\subfile{sections/introduction/introduction}
+\end{flushleft}
+
+\chapter{Teaching}
+\begin{flushleft}
+\subfile{sections/teaching/teaching}
+\end{flushleft}
+
+\chapter{Scholarship}
+\begin{flushleft}
+\subfile{sections/scholarship/scholarship}
+\end{flushleft}
+
+\chapter{Service}
+\begin{flushleft}
+\subfile{sections/service/service}
+\end{flushleft}
+
+\chapter{Advising and Mentoring}
+\begin{flushleft}
+\subfile{sections/advising_mentoring/advising_mentoring}
+\end{flushleft}
+
+\chapter{Conclusion}
+\begin{flushleft}
+\subfile{sections/conclusion/conclusion}
+\end{flushleft}
+
+\chapter{Appendix: Supporting Materials}
+\begin{flushleft}
+\subfile{supporting_materials/supporting_materials}
+\end{flushleft}
+
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
+ 
+\end{document}
