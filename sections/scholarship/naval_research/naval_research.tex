@@ -13,24 +13,86 @@ In Sec. 8 of my prior PEGP, I wrote about the opportunity our collaboration with
 \subsection{Radio-Frequency (RF) Engineering, with Applications to Radar and IceCube Gen2}
 \label{sec:cem_paper}
 
-I received my first Summer Faculty Research Fellowship in the Summer of 2020.  Miraculously, the ONR decided that the fellows could conduct research remotely.  After a consultation with Gary Yeakley, Dr. Christopher Clark, and Jeffery Benson of NSWC Corona, we concluded I could best serve our mutual interests by designing RF phased arrays.  RF phased arrays are groups of individual RF antennas that work together to generate a radar beam that can be steered with no moving parts.  This technology is highly useful in field environments that require AESAs: active electronically scannable antennas.  IceCube Gen2 and RNO-G will use them as receivers to detect UHE-$\nu$ (see Sec. \ref{sec:neutrino}).
+I received my first Summer Faculty Research Fellowship in the Summer of 2020.  Miraculously, the ONR decided that the fellows could conduct research remotely.  After a consultation with Gary Yeakley, Dr. Christopher Clark, and Jeffery Benson of NSWC Corona, we concluded I could best serve our mutual interests by designing RF phased arrays.  RF phased arrays are groups of individual RF antennas that work together to generate a radar beam that can be steered with no moving parts.  This technology is highly useful in field environments that require AESAs: active electronically scannable antennas.  IceCube Gen2 and RNO-G will use them as receivers to detect UHE-$\nu$ (see Sec. \ref{sec:neutrino}).  The NSWC Corona group, led by Dr. Clark, was interested in developing an AESA for an anechoic chamber testing facility that could mimic radar echos from targets for testing and verification of Navy hardware.  I was recruited primarily for my RF engineering background.
 
 \subsubsection{Publication: Broadband RF Phased Array Design with MEEP}
-this was all me baby
+
+Our initial discussions revealed that we needed a free and open-source tool to design phased arrays.  This is an example where my teaching greatly enhanced my research.  When building COSC330/PHYS306 (Computer Logic and Digital Circuit Design), I had to learn Jupyter (a platform-independent tool for executing computer code in a browser).  The free and open-source tool we found useful for designing phased arrays is called MEEP: \url{https://meep.readthedocs.io/en/latest/}.  The tutorials required knowledge of Jupyter, so my teaching had prepared me well.  I launched a project to design a phased array in the [1-10] GHz bandwidth, and a literature search revealed a review published in the open-access journal \textit{Electronics Journal} (MDPI) \cite{10.3390/electronics8121506}.  The authors mentioned MEEP, but did not include it in their analysis because of the learning curve with the CEM implementation in Python3.  This was all I needed to hear, and I threw myself into the project.
+\\
+\vspace{0.25cm}
+The result was my first solo-published engineering journal article, and it won Top 10 Most Notable Journal Articles in \textit{Electronics Journal} for six months in Dec 2020-May 2021 (see Supplemental Materials) \cite{electronics10040415}.  The work revealed the world of CEM to me and my NSWC colleagues.  It also is an application of high-performance computing due to the acceleration from using many computing cores in parallel.  I immediately began to recruit students to dive into this new subject with me.  The overall plan is to use additive manufacturing (3D printing) to give rise to free and open-source design and fabrication of RF antennas and phased arrays.  There are many applications for these new techniques, but the most immediate will be to lower the cost and time of production for radar systems.
+
 \subsubsection{Undergraduate Research and the Fletcher-Jones Fellowship}
-Include Adan Wildanger and 3-2 program
+
+In the Summer of 2021 I received my second SFRP Fellowship through ONR.  I recruited a 3-2 Engineering/Physics major named Adam Wildanger who had been asking about my engineering research with the Navy for a while.  He took my COSC330/PHYS306 course, in which I teach students about the connection between the armed services and cutting edge engineering research with applications in civilian sectors.  Adam lept at this opportunity, and received a Fletcher-Jones Fellowship for Summer 2021 in tandem with my ONR one.  Adam taught me about computer assisted design (CAD) programs so that we could translate our CEM results into a format that can be understood by 3D printers.  I built a short curriculum for Adam so he could learn to optimize my initial CEM models and port them to CAD files.  Along with our Navy colleagues, we succeeded in printing our first RF antennas.  The US Navy has donated sophisticated RF equipment to our engineering labs in the SLC (see Sec. of my prior PEGP).
+\\
+\vspace{0.25cm}
+We discovered that the 3D printing material, which had been advertised as electrically conducting, was not satisfactory for RF design.  Though our initial testing in Summer 2021 yielded results that at least matched expectations, I would like to see dramatic improvements before publishing the results.  For example, the authors of \cite{10.1109/access.2019.2932912} used similar 3D printing technique to construct a small RF horn antenna.  The performance of an antenna is gauged by how efficiently it transmits energy, and how it focuses that energy in the right direction.  Though our results were moderately successful in Summer 2021, we have identified and purchased a 3D printing filament with almost three orders of magnitude higher conductivity.  At this moment, we are experimenting with it in our machine shop.  Meanwhile, Adam graduated to USC via the 3-2 program and is now in his final year there.  Soon he will apply to engineering jobs at NSWC and similar institutions, to continue to help us with more open-source CEM applications.
+
 \subsubsection{Undergraduate Research with Physics Research (PHYS396)}
-Include Dane Goodman and Andrew Householder
+
+In the AY 2021-2022, I led a course called Physics Research (PHYS396) that goes beyond my teaching load.  I did this give course credit to my new students who are continuing the CEM research.  Students like Natasha Waldorf and Andrew Householder helped synthesize Adam Wildanger's results into computer code and documentation that can be learned by new students.  Andrew and Natasha provided code that can give a CAD design to MEEP, and MEEP results to CAD.  The code base has also been extended to fully 3D antennas from CAD instead of 2D ones extruded into 3D.  Further, in PHYS396 we worked with Rudy Jordan in IT to learn to penetrate the Whittier College firewall securly so that my students can run these sophisticated codes remotely.
+\\
+\vspace{0.25cm}
+Using my startup grant, I recently acquired a System76 Thelio Major with a AMD Threadripper 3 motherboard.  This machine has effectively 128 processors and 0.5 GB of volatile memory per processor.  Using parallel acceleration, our designs can increase in complexity and be run faster on multiple processors.  All of these processes and documentation were passed on to Dane Goodman\footnote{Dane is a special person for me, because he has been dedicated to the Whittier College baseball team here for four years including summers. He is now working for free to gain research experience in order to apply for graduate school in astrophysics.  Dane has a work ethic and curiosity that lights up my heart.  I made sure to include him in my section of PHYS396 so that he gets course credit.}, who volunteered over Summer 2022.  Once we have a working RF prototype with the new conducting material, we should have another publication in \textit{Electronics Journal}.
+
 \subsubsection{Invited Lecture: First Annual MeepCon at MIT (Summer 2022)}
-first invited lecture 45 min killed it
+
+In the past two years, researchers from several countries have contacted me about my paper in \textit{Electronics Journal}  \cite{electronics10040415}.  The authors of \cite{10.3390/electronics8121506} contacted me, and they were able to reproduce my results after a fruitful dialogue.  As word spread, the creators of MEEP at MIT and Google contacted me over this past Summer (2022) and invited my to give a lecture at a national CEM conference at MIT.  I gave a 45 minute lecture on RF CEM design alongside colleagues from MIT, Google, Georgia Tech, Stanford, and BYU.  It was an incredibly meaningful moment in my career.  I took the opportunity to promote the mission and values of Whittier College\footnote{My lecture slides are included in the Supplemental Material.}.  My colleagues in the audience welcomed me as one of their own, and I have decided to continue advancing my CEM research with the Navy over the next few years.  At the very least, I have a new set of contacts at other institutions.  These professors can accept our students as interns or graduate students, and link our research with industry partners.  Primarily, their work focuses on photonics, for which the main application is fiber optic communications and novel optical devices.
+
 \subsection{Research Grants: ONR Summer Faculty Research Fellowships (SFRP)}
 \label{sec:fellow}
-t
-\subsubsection{Workforce Development: Active Learning in the Armed Services}
-course 1 and 2
+
+In addition to my CEM research with Navy colleagues, I have also engaged in the scholarship of application surrounding workforce development for NSWC Corona.  I have created two full RF engineering and DSP courses that can be downloaded and viewed by Navy personnel.  These have been uploaded to the secure servers at the Corona Division base.  The audience for these courses are new or transferred hires that need to review the basics of applied physics in topics like radar and GPS.  During the Summer of 2021, I developed a course entitled ``RF Field Engineering: A Practical Introduction'' that focused on repairing and understanding Navy equipment from a physical and mathematical perspective.  In Summer 2022, I developed a course entitled ``Introduction to GPS M-Code Signals for Onboarding of Navy Personnel''\footnote{The Summer 2022 course slides are included in the Supplemental Material, but I felt including the 2021 course would have been redundant.}.  These courses are implemented using my teaching philosophy pieces (1), (2), (3), and (5) (see Sec. \ref{sec:teaching_philosophy}).  For (5), synergies, there is a synthesizing code example the student must complete to reproduce realistic mathematical models of GPS M-code signals (modern military encrypted GPS signals).  My model is shown to match the literature on GPS M-code \cite{mcode}.  For my work in CEM, and for the development of these courses, the ONR award me a third SFRP Fellowship in Summer 2022.
+
 \subsubsection{Grants Received: SFRP Status}
-money, equipment, and include mention the MSF as well
+
+According to ONR protocols, I become eligible for Senior Faculty Fellowships once I have been awarded an SFRP Fellowship three times.  I am eligible to apply in Summer 2023 after a mandatory one-year cooling period.  I have included all funding I have received from the ONR, and all student fellowships that I have received up to the present in Tab. \ref{tab:funds}.  I have included all equipment NSWC Corona has donated to Whittier College in Tab. \ref{tab:equip}.  These items were at first on loan to us, but are now being converted to donations.  There are further HPC resources in preparation to be donated to us, pending approval by senior personnel at the lab.  Equipment such as the items in Tab. \ref{tab:equip} are typically donated to colleges and universities when their project life-cylce is complete at the Navy lab and are no longer necessary.  In Sec. \ref{sec:epa} below, I articulate a vision for the use of these instruments in Whittier College engineering projects.
+
+\begin{table}
+\centering
+\begin{tabular}{c c c c}
+Student/Professor & Grant Opportunity & Amount & Dates \\ \hline
+Jordan C. Hanson & ONR Summer Faculty Fellow & \$16.5k & Summer 2022 \\
+Raymond Hartig & Ondrasik-Groce Fellowship & \$5k & Summer 2022 \\
+Jordan C. Hanson & ONR Summer Faculty Fellow & \$16.5k & Summer 2021 \\
+Adam Wildanger & Fletcher Jones Fellowship & \$5k & Summer 2021 \\
+Jordan C. Hanson & ONR Summer Faculty Fellow & \$16.5k & Summer 2020 \\
+Raymond Hartig & Fletcher Jones Fellowship & \$5k & Summer 2020 \\
+John Paul G\'{o}mez-Reed & Ondrasik-Groce Fellowship & \$7.5k & Summer-Fall 2019 \\
+John Paul G\'{o}mez-Reed & Keck Fellowship & \$5k & Summer 2018 \\
+Cassady Smith & Keck Fellowship & \$5k & Summer 2018 \\
+\end{tabular}
+\caption{\label{tab:funds} A listing of the grant opportunities awarded to my students and I.}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{c c c c}
+Equipment & Purpose & Bandwidth & Cost \\ \hline
+Rohde and Schwartz ZVL6 Network Analyzer & Measuring RF power and frequency & 9 kHz to 6 GHz & \$20k \\
+Rohde and Schwartz NRP-91 Power Sensors (2) & Measuring RF power & 9 kHz to 6 GHz & \$8k \\
+Aeroflex 3416 Digital RF Signal Generator & Creating RF signals & 250kHz to 6 GHz & \$12k \\
+Calibration antenna kits (2) & Receiving and transmitting & Varies by antenna & \$2k \\
+Calibration test kits for Network Analyzer (2) & Network Analyzer Calibration & 6 kHz to 9 GHz & \$6k
+\end{tabular}
+\caption{\label{tab:equip} A listing of the equipment provided to our labs by the Office of Naval Research.}
+\end{table}
+
 \subsection{Future Plans: Educational Partnership Agreement (EPA) with NSWC Corona Division}
 \label{sec:epa}
-mention equipment, high-performance computing, reliability engineering, internships
+
+My current contact at the NSWC Corona is Jeffery Benson, who is a telecommunications and software engineer.  Jeffery has indicated that NSWC Corona is interested in forming a lasting partnership with Whittier College through my scholarship.  Known as an Educational Partnership Agreement (EPA), these relationships are essentially memoranda of understanding (MoUs) that open doors for our students.  According to the statute governing EPAs (US10 USC 2194), the following activities are examples of collaboration through EPAs with Naval labs:
+
+\begin{itemize}
+\item Reliability engineering analysis
+\item CEM research for phased array radar
+\item Metrology
+\end{itemize}
+
+Rather than include details about all the exciting projects we can initiate with our students given the listed topics, I think it's more interesting to focus on one example: the SMART program.
+\\
+\vspace{0.25cm}
+The Science, Mathematics, and Research for Transformation Program (SMART)\footnote{See \url{https://www.navsea.navy.mil/Home/Warfare-Centers/NSWC-Corona/Careers/Hiring-Opportunities/SMART-Scholarship/}, and the main site: \url{https://www.smartscholarship.org/smart}.} is a STEM undergraduate research program that could fund our students undergraduate tuition.
+
 \end{document}
